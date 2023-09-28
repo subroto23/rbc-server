@@ -1,0 +1,32 @@
+require("dotenv").config();
+
+const serverPort = process.env.SERVER_PORT_NUMBER || 3002;
+
+const mongodbUrl =
+  process.env.MONGODB_ATLAS_URL || "mongodb://localhost:27017/rbcDatabase";
+
+const userDefaultsImages =
+  process.env.USER_DEFAULT_IMAGE_PATH || "../public/Images/user.jpg";
+
+const jsonWebTokensKey =
+  process.env.JSONWEBTOKE_NEWUSER_REGISTATION || "hfdhfhshisfwiuhfsguihshsh";
+
+const smtpUserName = process.env.SMTP_USERNAME;
+const smtpPassword = process.env.SMTP_PASSWORD;
+
+const clintWebsiteAddress = process.env.CLIENT_WEBSITE_ADDRESS;
+
+const MAX_FILE_SIZE = 2097152;
+const ALLOWED_FILE_TYPES = ["image/jpg", "image/jpeg", "image/png"];
+
+module.exports = {
+  serverPort,
+  mongodbUrl,
+  userDefaultsImages,
+  jsonWebTokensKey,
+  smtpUserName,
+  smtpPassword,
+  clintWebsiteAddress,
+  MAX_FILE_SIZE,
+  ALLOWED_FILE_TYPES,
+};
