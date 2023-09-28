@@ -42,6 +42,7 @@ const UsersSchema = new Schema(
     img: {
       type: Buffer,
       contentType: String,
+      required: [true, "Image is required"],
     },
     phone: {
       type: String,
