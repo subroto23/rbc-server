@@ -55,7 +55,7 @@ const userRegistation = async (req, res, next) => {
       payload: token,
     });
   } catch (error) {
-    next(createHttpError(404, "Registation request failed"));
+    next(createHttpError(404, "Registation request failed", error));
   }
 };
 
