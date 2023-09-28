@@ -1,3 +1,12 @@
 {
-  "routes": [{ "src": "/[^.]+", "dest": "/index.js", "status": 200 }]
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/app.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.js"
+    }
+  ]
 }
