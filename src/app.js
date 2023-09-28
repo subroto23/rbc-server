@@ -7,7 +7,13 @@ const userRouter = require("./Router/UsersRouter");
 const sheedRouter = require("./Router/SheedRouter");
 const cors = require("cors");
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://rbc-backend.vercel.app/"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 //Express limits setup
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
