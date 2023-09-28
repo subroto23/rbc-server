@@ -1,12 +1,21 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/index.js"
+      "src": "/index.js",
+      "status": 308,
+      "headers": {
+        "Location": "https://rbc-backend-hejyxupaa-subroto23.vercel.app/"
+      }
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.js"
-    }
+      "src": "/custom-page",
+      "headers": { "cache-control": "s-maxage=1000" },
+      "dest": "/index.html"
+    },
+    { "src": "/api", "dest": "/my-api.js" },
+    { "src": "/api/users", "methods": ["get"], "dest": "./src/app.js" },
+    { "src": "/users/(?<id>[^/]*)", "dest": "/users-api.js?id=$id" },
+    { "src": "/legacy", "status": 404 },
+    { "src": "/.*", "dest": "https://my-old-site.com" }
   ]
 }
