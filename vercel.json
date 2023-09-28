@@ -1,21 +1,5 @@
 {
-  "routes": [
-    {
-      "src": "/index.js",
-      "status": 308,
-      "headers": {
-        "Location": "https://rbc-backend-hejyxupaa-subroto23.vercel.app/"
-      }
-    },
-    {
-      "src": "/custom-page",
-      "headers": { "cache-control": "s-maxage=1000" },
-      "dest": "/index.html"
-    },
-    { "src": "/api", "dest": "/my-api.js" },
-    { "src": "/api/users", "methods": ["get"], "dest": "./src/app.js" },
-    { "src": "/users/(?<id>[^/]*)", "dest": "/users-api.js?id=$id" },
-    { "src": "/legacy", "status": 404 },
-    { "src": "/.*", "dest": "https://my-old-site.com" }
-  ]
+  "version": 2,
+  "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "index.js" }]
 }
