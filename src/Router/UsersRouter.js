@@ -28,9 +28,9 @@ userRouter.delete("/:id", deleteUser);
 
 userRouter.post(
   "/registation",
+  // validateRegistation,
+  // runValidations,
   upload.single("img"),
-  validateRegistation,
-  runValidations,
   UserRegistation
 );
 

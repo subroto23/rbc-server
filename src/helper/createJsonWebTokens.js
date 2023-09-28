@@ -15,7 +15,7 @@ const CreateJsonWebToken = (model, tokenKey, expired = "10m") => {
     }
     return token;
   } catch (error) {
-    throw createHttpError(404, "Token not found", error);
+    throw createHttpError(404, "Token not found");
   }
 };
 

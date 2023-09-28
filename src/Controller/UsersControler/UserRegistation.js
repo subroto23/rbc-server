@@ -44,7 +44,7 @@ const userRegistation = async (req, res, next) => {
     try {
       // Sending Mail
       await sendingMail(emailData);
-    } catch (emailError) {
+    } catch (error) {
       next(createHttpError(500, "Failed to send Verification Email"));
       return;
     }
@@ -55,7 +55,7 @@ const userRegistation = async (req, res, next) => {
       payload: token,
     });
   } catch (error) {
-    next(createHttpError(404, "Registation request failed",error));
+    next(createHttpError(404, "Registation request failed"));
   }
 };
 

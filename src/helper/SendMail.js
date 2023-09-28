@@ -35,7 +35,7 @@ const sendingMail = async (emailData) => {
       throw createHttpError(412, "We are unable to send email...");
     }
   } catch (error) {
-    throw createHttpError(410, error.message);
+    throw createHttpError(410, "sending mail failed");
   }
 };
 
