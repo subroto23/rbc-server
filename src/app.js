@@ -5,7 +5,9 @@ const createError = require("http-errors");
 const rateLimit = require("express-rate-limit");
 const userRouter = require("./Router/UsersRouter");
 const sheedRouter = require("./Router/SheedRouter");
+const cors = require("cors");
 
+app.use(cors());
 //Express limits setup
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
