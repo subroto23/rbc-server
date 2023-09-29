@@ -24,11 +24,7 @@ const handleLogin = async (req, res, next) => {
         "Sorry! You are not allowed to Login.please contact authority"
       );
     }
-    const token = await CreateJsonWebToken(
-      { email, password },
-      authLoginKey,
-      "60d"
-    );
+    const token = CreateJsonWebToken({ email, password }, authLoginKey, "60d");
     if (!token) {
       throw createHttpError("Token generated failed");
     }
@@ -39,7 +35,6 @@ const handleLogin = async (req, res, next) => {
       httpOnly: true,
       sameSite: "none",
     });
-    // const decoded = jwt.verify(password, jsonWebTokensKey);
     return handleSuccess(res, {
       statusCode: 200,
       message: "Successfully Logged In",
