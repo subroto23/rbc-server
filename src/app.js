@@ -6,7 +6,10 @@ const rateLimit = require("express-rate-limit");
 const userRouter = require("./Router/UsersRouter");
 const sheedRouter = require("./Router/SheedRouter");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const authRouter = require("./Router/AuthRoute/AuthRoute");
 
+app.use(cookieParser());
 app.use(cors());
 //Express limits setup
 const apiLimiter = rateLimit({
@@ -32,6 +35,9 @@ app.get("/", (req, res) => {
 
 //Users Routers Creating
 app.use("/api/users", userRouter);
+
+//Auth Router
+app.use("/auth", authRouter);
 
 //Sheed users
 app.use("/api/sheeds/users", sheedRouter);

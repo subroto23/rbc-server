@@ -17,6 +17,8 @@ const updateUser = async (req, res, next) => {
     for (let key in req.body) {
       if (["name", "phone", "dateOfBirth", "dateOfDead"].includes(key)) {
         updatedUser[key] = req.body[key];
+      } else if (["email"].includes(key)) {
+        return createHttpError("Sorry !! Email not Changed");
       }
     }
 

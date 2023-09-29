@@ -19,6 +19,9 @@ const clintWebsiteAddress = process.env.CLIENT_WEBSITE_ADDRESS;
 const MAX_FILE_SIZE = 2097152;
 const ALLOWED_FILE_TYPES = ["image/jpg", "image/jpeg", "image/png"];
 
+//Auth Key
+
+const authLoginKey = process.env.AUTH_ACCESS_KEY_TOKEN || "fjfjffjjjfjfjf";
 module.exports = {
   serverPort,
   mongodbUrl,
@@ -29,4 +32,5 @@ module.exports = {
   clintWebsiteAddress,
   MAX_FILE_SIZE,
   ALLOWED_FILE_TYPES,
+  authLoginKey,
 };
