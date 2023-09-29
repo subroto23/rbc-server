@@ -24,7 +24,7 @@ const handleLogin = async (req, res, next) => {
         "Sorry! You are not allowed to Login.please contact authority"
       );
     }
-    const token = CreateJsonWebToken(userInfo , authLoginKey, "60d");
+    const token = CreateJsonWebToken({ userInfo }, authLoginKey, "60d");
     if (!token) {
       throw createHttpError("Token generated failed");
     }

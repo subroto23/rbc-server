@@ -8,7 +8,7 @@ const isLogedIn = (req, res, next) => {
       throw createHttpError("Please Logged in First");
     }
     const decoded = jwt.verify(token, authLoginKey);
-    req.body.userId = decoded;
+    req.body = decoded;
     return next();
   } catch (error) {
     next(error);

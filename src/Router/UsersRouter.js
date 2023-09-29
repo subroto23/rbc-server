@@ -15,10 +15,12 @@ const UserActivation = require("../Controller/UsersControler/UserActivation");
 const updateUser = require("../Controller/UsersControler/updateUser");
 const isLogedIn = require("../Middleware/isLogedin");
 const isLogedOut = require("../Middleware/isLogedOut");
+const isAdmin = require("../Middleware/isAdmin");
+const isBanned = require("../Middleware/isBanned");
 const userRouter = express.Router();
 
 //users Router Creating => /api/users
-userRouter.get("/", isLogedIn, getUsersController);
+userRouter.get("/", isLogedIn, isBanned, isAdmin, getUsersController);
 
 //Find Users by Searching => api/users/filter?search = subroto
 userRouter.get("/filters", isLogedIn, searchingUsers);
