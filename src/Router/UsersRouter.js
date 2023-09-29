@@ -12,6 +12,7 @@ const {
   userRegistation,
 } = require("../Controller/UsersControler/UserRegistation");
 const UserActivation = require("../Controller/UsersControler/UserActivation");
+const updateUser = require("../Controller/UsersControler/updateUser");
 const userRouter = express.Router();
 
 //users Router Creating => /api/users
@@ -37,5 +38,7 @@ userRouter.post(
 );
 
 userRouter.post("/activation/:tokens", UserActivation);
+
+userRouter.put("/update/:id", upload.single("img"), updateUser);
 
 module.exports = userRouter;
