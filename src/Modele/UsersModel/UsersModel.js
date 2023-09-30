@@ -53,6 +53,10 @@ const UsersSchema = new Schema(
         validator: (v) => /^([01]|\+88)?\d{11}/.test(v),
       },
     },
+    img: {
+      type: Buffer,
+      contentType: String,
+    },
     dateOfBirth: {
       type: String,
       trim: true,
