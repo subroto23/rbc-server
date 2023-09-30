@@ -18,7 +18,7 @@ const userRegistation = async (req, res, next) => {
       dateOfDead,
       password,
       phone,
-      img: imageBufferString,
+      // img: imageBufferString,
     };
 
     if (isExists) {
