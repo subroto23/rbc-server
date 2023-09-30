@@ -17,6 +17,7 @@ const isLogedIn = require("../Middleware/isLogedin");
 const isLogedOut = require("../Middleware/isLogedOut");
 const isAdmin = require("../Middleware/isAdmin");
 const isBanned = require("../Middleware/isBanned");
+const userDirectRegistation = require("../Controller/UsersControler/userDirectSave");
 const userRouter = express.Router();
 
 //users Router Creating => /api/users
@@ -32,7 +33,7 @@ userRouter.get("/:id", getUserById);
 userRouter.delete("/delete/:id", isLogedIn, deleteUser);
 
 //Users Direct registations
-userRouter.post("/directuser", userRegistation);
+userRouter.post("/directuser", userDirectRegistation);
 
 //Update User Data
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);
