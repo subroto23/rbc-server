@@ -39,11 +39,11 @@ const UsersSchema = new Schema(
       min: [3, "Your password is too short"],
       set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
     },
-    img: {
-      type: Buffer,
-      contentType: String,
-      default: "./public/Images/user.jpg",
-    },
+    // img: {
+    //   type: Buffer,
+    //   contentType: String,
+    //   default: "./public/Images/user.jpg",
+    // },
     phone: {
       type: String,
       trim: true,
