@@ -11,15 +11,23 @@ const userDirectRegistation = async (req, res, next) => {
       dateOfBirth,
       phone,
       password,
+      dateOfDead,
     } = req.body;
+    if (
+      typeof dateOfBirth === "undefined" ||
+      typeOf(dateOfDead) === "undefined"
+    ) {
+      return (dateOfBirth = "11-13-1900") || (dateOfDead = "11-13-1900");
+    }
     const users = {
       name,
       fathername,
       mothername,
       email,
       password,
-      dateOfBirth,
       phone,
+      dateOfBirth,
+      dateOfDead,
     };
     const isExists = await userSchemaModel.exists({ email });
 
