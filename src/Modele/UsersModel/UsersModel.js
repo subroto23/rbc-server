@@ -12,6 +12,20 @@ const UsersSchema = new Schema(
       max: [31, "Your name is too  long"],
       min: [3, "Name is too short"],
     },
+    fathername: {
+      type: String,
+      required: true,
+      trim: true,
+      max: [31, "Your name is too  long"],
+      min: [3, "Name is too short"],
+    },
+    mothername: {
+      type: String,
+      required: true,
+      trim: true,
+      max: [31, "Your name is too  long"],
+      min: [3, "Name is too short"],
+    },
     email: {
       type: String,
       // required: true,

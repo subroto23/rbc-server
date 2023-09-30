@@ -3,9 +3,19 @@ const { handleSuccess } = require("../../Services/SuccessError");
 const userSchemaModel = require("../../Modele/UsersModel/UsersModel");
 const userDirectRegistation = async (req, res, next) => {
   try {
-    const { name, email, dateOfBirth, phone, password } = req.body;
+    const {
+      name,
+      fathername,
+      mothername,
+      email,
+      dateOfBirth,
+      phone,
+      password,
+    } = req.body;
     const users = {
       name,
+      fathername,
+      mothername,
       email,
       password,
       dateOfBirth,
