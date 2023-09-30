@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const bcrypt = require("bcryptjs");
-const { userDefaultsImages } = require("../../secret");
+// const { userDefaultsImages } = require("../../secret");
 
 const UsersSchema = new Schema(
   {
@@ -47,11 +47,11 @@ const UsersSchema = new Schema(
       type: String,
       trim: true,
     },
-    img: {
-      type: Buffer,
-      contentType: String,
-      default: "./public/Images/user.jpg",
-    },
+    // img: {
+    //   type: Buffer,
+    //   contentType: String,
+    //   default: "./public/Images/user.jpg",
+    // },
     isMaried: {
       type: Boolean,
       default: false,

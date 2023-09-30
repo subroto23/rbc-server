@@ -4,7 +4,6 @@ const userSchemaModel = require("../../Modele/UsersModel/UsersModel");
 const userDirectRegistation = async (req, res, next) => {
   try {
     const { name, email, dateOfBirth, phone } = req.body;
-    console.log(req.body);
     const users = {
       name,
       email,
