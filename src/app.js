@@ -8,6 +8,13 @@ const sheedRouter = require("./Router/SheedRouter");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const authRouter = require("./Router/AuthRoute/AuthRoute");
+const bodyParser = require("body-parser");
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 app.use(cookieParser());
 app.use(cors());
