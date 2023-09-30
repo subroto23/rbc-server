@@ -10,7 +10,7 @@ const userRegistation = async (req, res, next) => {
     const { name, email, dateOfBirth, dateOfDead, password, phone } = req.body;
     const isExists = await userSchemaModel.exists({ email });
 
-    const imageBufferString = req.file.buffer.toString("base64");
+    // const imageBufferString = req.file.buffer.toString("base64");
     const newUser = {
       name,
       email,
