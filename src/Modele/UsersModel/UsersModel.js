@@ -14,7 +14,7 @@ const UsersSchema = new Schema(
     },
     email: {
       type: String,
-      required: true,
+      // required: true,
       trim: true,
       unique: true,
       lowercase: true,
@@ -26,7 +26,7 @@ const UsersSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, "Password is required"],
+      // required: [true, "Password is required"],
       max: [8, "Your password is too  long"],
       min: [3, "Your password is too short"],
       // set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
@@ -34,7 +34,7 @@ const UsersSchema = new Schema(
     phone: {
       type: String,
       trim: true,
-      required: [true, "please enter a valid Phone Number"],
+      // required: [true, "please enter a valid Phone Number"],
       validate: {
         validator: (v) => /^([01]|\+88)?\d{11}/.test(v),
       },
