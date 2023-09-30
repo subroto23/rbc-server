@@ -36,9 +36,9 @@ userRouter.delete("/delete/:id", isLogedIn, deleteUser);
 userRouter.post(
   "/registation",
   upload.single("img"),
-  validateRegistation
+  // validateRegistation
   // runValidations,
-  // userRegistation
+  userRegistation
 );
 
 userRouter.post("/activation/:tokens", isLogedOut, UserActivation);
