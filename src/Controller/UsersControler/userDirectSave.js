@@ -22,7 +22,7 @@ const userDirectRegistation = async (req, res, next) => {
     }
     return handleSuccess(res, {
       statusCode: 202,
-      message: `Verify Your Requesting process.Please Check Your ${email}`,
+      message: `User Created Successfully`,
       payload: { newUserData },
     });
   } catch (error) {
