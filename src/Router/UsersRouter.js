@@ -33,7 +33,7 @@ userRouter.get("/:id", getUserById);
 userRouter.delete("/delete/:id", isLogedIn, deleteUser);
 
 //Users Direct registations
-userRouter.post("/directuser", userDirectRegistation);
+userRouter.post("/directuser", upload.single("img"), userDirectRegistation);
 
 //Update User Data
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);
