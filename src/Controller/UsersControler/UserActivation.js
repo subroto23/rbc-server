@@ -6,8 +6,8 @@ const { jsonWebTokensKey } = require("../../secret");
 const userSchemaModel = require("../../Modele/UsersModel/UsersModel");
 const UserActivation = async (req, res, next) => {
   try {
-    const token = req.params.tokens;
-    console.log("Activation TOken" + token);
+    const token = req.params.token;
+    console.log(token);
     if (!token)
       throw createHttpError(
         "Expired verification email times.Please try again later"

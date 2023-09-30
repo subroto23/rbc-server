@@ -36,12 +36,12 @@ userRouter.delete("/delete/:id", isLogedIn, deleteUser);
 userRouter.post(
   "/registation",
   upload.single("img"),
-  validateRegistation,
-  runValidations,
+  // validateRegistation,
+  // runValidations,
   userRegistation
 );
 
-userRouter.post("/activation/:tokens", isLogedOut, UserActivation);
+userRouter.post("/activation/:token", isLogedOut, UserActivation);
 
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);
 
