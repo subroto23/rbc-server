@@ -37,7 +37,7 @@ const UsersSchema = new Schema(
       required: [true, "Password is required"],
       max: [8, "Your password is too  long"],
       min: [3, "Your password is too short"],
-      set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
+      // set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
     },
     // img: {
     //   type: Buffer,
