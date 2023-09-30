@@ -42,6 +42,7 @@ const UsersSchema = new Schema(
     img: {
       type: Buffer,
       contentType: String,
+      default: "./public/Images/user.jpg",
     },
     phone: {
       type: String,

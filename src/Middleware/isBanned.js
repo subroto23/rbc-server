@@ -2,7 +2,7 @@ const createHttpError = require("http-errors");
 const isBanned = (req, res, next) => {
   try {
     const admin = req.body.userInfo.isBanned;
-    if (!admin) {
+    if (admin) {
       throw createHttpError(
         "You are not allowed to access this page.Please contact authority"
       );

@@ -20,7 +20,7 @@ const isBanned = require("../Middleware/isBanned");
 const userRouter = express.Router();
 
 //users Router Creating => /api/users
-userRouter.get("/", isLogedIn, isBanned, isAdmin, getUsersController);
+userRouter.get("/", isLogedIn, isBanned, getUsersController);
 
 //Find Users by Searching => api/users/filter?search = subroto
 userRouter.get("/filters", isLogedIn, searchingUsers);

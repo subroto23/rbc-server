@@ -16,5 +16,21 @@ const validateRegistation = [
   body("password").trim().notEmpty().withMessage("Password is required"),
   body("phone").trim().notEmpty().withMessage("Phone Number is required"),
 ];
+const validateLogIn = [
+  body("email")
+    .trim()
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("সঠিক ই-মেইল প্রদান করুন"),
+  body("password")
+    .trim()
+    .notEmpty()
+    .withMessage("Password is required")
+    .matches(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{4,6}$/)
+    .withMessage(
+      "Password should contain Number,upperCase letter,LowerCase letter,special character combination"
+    ),
+];
 
-module.exports = { validateRegistation };
+module.exports = { validateRegistation, validateLogIn };
