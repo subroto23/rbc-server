@@ -11,7 +11,7 @@ const upload = require("../Middleware/UploadFile");
 const {
   userRegistation,
 } = require("../Controller/UsersControler/UserRegistation");
-const UserActivation = require("../Controller/UsersControler/UserActivation");
+// const UserActivation = require("../Controller/UsersControler/UserActivation");
 const updateUser = require("../Controller/UsersControler/updateUser");
 const isLogedIn = require("../Middleware/isLogedin");
 const isLogedOut = require("../Middleware/isLogedOut");
@@ -41,7 +41,7 @@ userRouter.post(
   userRegistation
 );
 
-userRouter.post("/activation/:token", isLogedOut, UserActivation);
+// userRouter.post("/activation/:token", isLogedOut, UserActivation);
 
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);
 
