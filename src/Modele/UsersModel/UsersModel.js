@@ -1,8 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const bcrypt = require("bcryptjs");
-const { userDefaultsImages } = require("../../secret");
-
 const UsersSchema = new Schema(
   {
     name: {
@@ -32,18 +29,6 @@ const UsersSchema = new Schema(
         message: "Please enter a valid email address",
       },
     },
-    password: {
-      type: String,
-      required: [true, "Password is required"],
-      max: [8, "Your password is too  long"],
-      min: [3, "Your password is too short"],
-      // set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
-    },
-    // img: {
-    //   type: Buffer,
-    //   contentType: String,
-    //   default: "./public/Images/user.jpg",
-    // },
     phone: {
       type: String,
       trim: true,

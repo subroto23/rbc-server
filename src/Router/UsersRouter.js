@@ -31,18 +31,10 @@ userRouter.get("/:id", getUserById);
 //Delete Data with find Id => api/users/:id
 userRouter.delete("/delete/:id", isLogedIn, deleteUser);
 
-//User Registaion Process =>
+//Users Direct registations
+userRouter.post("/directuser", userRegistation);
 
-userRouter.post(
-  "/registation",
-  // upload.single("img"),
-  // validateRegistation,
-  // runValidations,
-  userRegistation
-);
-
-// userRouter.post("/activation/:token", isLogedOut, UserActivation);
-
+//Update User Data
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);
 
 module.exports = userRouter;
