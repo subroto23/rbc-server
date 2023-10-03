@@ -53,7 +53,7 @@ const UsersSchema = new Schema(
         validator: (v) => /^([01]|\+88)?\d{11}/.test(v),
       },
     },
-    img: {
+    image: {
       type: Buffer,
       required: [true, "Please User Profile Photho Upload"],
     },
