@@ -10,6 +10,13 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./Router/AuthRoute/AuthRoute");
 const bodyParser = require("body-parser");
 
+app.use(
+  bodyParser.urlencoded({
+    limit: "50mb",
+    extended: true,
+    parameterLimit: 50000,
+  })
+);
 // parse application/x-www-form-urlencoded
 // app.use(bodyParser.urlencoded({ extended: false }));
 
