@@ -54,7 +54,7 @@ const UsersSchema = new Schema(
       },
     },
     image: {
-      type: Buffer,
+      type: String,
       required: [true, "Please User Profile Photho Upload"],
     },
     dateOfBirth: {
