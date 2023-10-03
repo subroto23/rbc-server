@@ -9,7 +9,9 @@ const userRegistation = async (req, res, next) => {
   try {
     const { name, email, dateOfBirth, dateOfDead, password, phone } = req.body;
     const isExists = await userSchemaModel.exists({ email });
-
+    if (!req.file) {
+      throw createHttpError("User Image file is required");
+    }
     const imageBufferString = req.file.buffer.toString("base64");
     const newUser = {
       name,
