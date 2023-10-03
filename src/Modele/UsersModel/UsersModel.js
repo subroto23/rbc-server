@@ -54,8 +54,8 @@ const UsersSchema = new Schema(
       },
     },
     image: {
-      type: String,
-      required: [true, "Please User Profile Photho Upload"],
+      type: File,
+      required: [true, "Please User Profile Photo Upload"],
     },
     dateOfBirth: {
       type: String,
