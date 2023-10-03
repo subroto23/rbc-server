@@ -13,7 +13,8 @@ const userRegistation = async (req, res, next) => {
     if (!req.file.path) {
       throw createHttpError("User Image file is required");
     }
-    const imageBufferString = req.file.path.buffer.toString("base64");
+    const imageBufferString = req.file.body.buffer.toString("base64");
+    console.log(imageBufferString);
     const newUser = {
       name,
       email,
