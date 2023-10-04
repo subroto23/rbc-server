@@ -14,11 +14,7 @@ const userDirectRegistation = async (req, res, next) => {
     } = req.body;
 
     // const imageBufferString = await req.file.buffer.toString("base64");
-    const imageData = new Image();
-    imageData.data = req.file.buffer;
-    imageData.contentType = req.file.mimetype;
-
-    await imageData.save();
+    const imageBuffer = await req.file.buffer.toString("base64");
 
     const users = {
       name,
@@ -28,7 +24,7 @@ const userDirectRegistation = async (req, res, next) => {
       password,
       phone,
       dateOfBirth,
-      image: imageData,
+      image: imageBuffer,
       // image: imageBufferString,
     };
     const isExists = await userSchemaModel.exists({ email });
