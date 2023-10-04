@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const createError = require("http-errors");
 const rateLimit = require("express-rate-limit");
 const userRouter = require("./Router/UsersRouter");
+const eventRoute = require("./Router/EventRoute/EventsRoute");
 const sheedRouter = require("./Router/SheedRouter");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -55,6 +56,9 @@ app.use("/auth", authRouter);
 
 //Sheed users
 app.use("/api/sheeds/users", sheedRouter);
+
+//Events Adding
+app.use("/events", eventRoute);
 
 //clint side error
 app.use((req, res, next) => {
