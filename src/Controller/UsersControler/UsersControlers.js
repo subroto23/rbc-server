@@ -9,10 +9,11 @@ const getUsersController = async (req, res, next) => {
     if (!users) {
       throw createHttpError(404, "User not Found");
     }
+
     return handleSuccess(res, {
       statusCode: 201,
       message: "All Users Successfully Returned",
-      payload: users,
+      payload: { users },
     });
   } catch (error) {
     next(createHttpError(404, "Internal Server Problem All users Data"));
