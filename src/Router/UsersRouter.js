@@ -21,7 +21,7 @@ const userDirectRegistation = require("../Controller/UsersControler/userDirectSa
 const userRouter = express.Router();
 
 //users Router Creating => /api/users
-userRouter.get("/", isLogedIn, isBanned, getUsersController);
+userRouter.get("/", getUsersController);
 
 //Find Users by Searching => api/users/filter?search = subroto
 userRouter.get("/filters", isLogedIn, searchingUsers);
