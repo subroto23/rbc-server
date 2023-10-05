@@ -7,24 +7,16 @@ const Events = new Schema(
       trim: true,
       required: [true, "উৎসবের নাম অবশ্যই লিখতে হবে"],
     },
-  },
-  {
     subtitle: {
       type: String,
       trim: true,
     },
-  },
-  {
     about: { type: String, trim: true },
-  },
-  {
     date: {
       type: String,
       trim: true,
       required: [true, "উৎসবের তারিখ অবশ্যই দিতে হবে"],
     },
-  },
-  {
     image: {
       type: Buffer,
       contentType: String,

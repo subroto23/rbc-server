@@ -5,6 +5,7 @@ const { handleSuccess } = require("../../Services/SuccessError");
 const eventsPostController = async (req, res, next) => {
   try {
     const { title, subtitle, about, date } = req.body;
+    console.log(req.body);
     let image = await req.fill;
     if (image) {
       image = await image.buffer.toString("base64");
