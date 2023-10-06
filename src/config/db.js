@@ -3,6 +3,8 @@ const { mongodbUrl } = require("../secret");
 
 const mongodbDatabaseConnection = async (options = {}) => {
   try {
+    // mongoose.set("strictQuery", true);
+    mongoose.set("strictPopulate", false);
     await mongoose.connect(mongodbUrl, options);
     console.log("Mongo db Connection successfully");
 

@@ -10,6 +10,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const authRouter = require("./Router/AuthRoute/AuthRoute");
 const bodyParser = require("body-parser");
+const NewsRoute = require("./Router/NewsRoute/NewsRoute");
 
 app.use(
   bodyParser.urlencoded({
@@ -59,6 +60,9 @@ app.use("/api/sheeds/users", sheedRouter);
 
 //Events Adding
 app.use("/events", eventRoute);
+
+//News Routes
+app.use("/api/news", NewsRoute);
 
 //clint side error
 app.use((req, res, next) => {
