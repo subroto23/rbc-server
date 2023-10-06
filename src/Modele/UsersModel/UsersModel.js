@@ -26,6 +26,10 @@ const UsersSchema = new Schema(
       max: [31, "Your name is too  long"],
       min: [3, "Name is too short"],
     },
+    dateOfBirth: {
+      type: String,
+      trim: true,
+    },
     email: {
       type: String,
       // required: true,
@@ -38,13 +42,6 @@ const UsersSchema = new Schema(
         message: "Please enter a valid email address",
       },
     },
-    password: {
-      type: String,
-      // required: [true, "Password is required"],
-      max: [8, "Your password is too  long"],
-      min: [3, "Your password is too short"],
-      set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
-    },
     phone: {
       type: String,
       trim: true,
@@ -52,19 +49,18 @@ const UsersSchema = new Schema(
       validate: {
         validator: (v) => /^([01]|\+88)?\d{11}/.test(v),
       },
+      password: {
+        type: String,
+        // required: [true, "Password is required"],
+        max: [8, "Your password is too  long"],
+        min: [3, "Your password is too short"],
+        set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
+      },
     },
     image: {
       type: Buffer,
       contentType: String,
       required: [true, "Please User Profile Photo Upload"],
-    },
-    dateOfBirth: {
-      type: String,
-      trim: true,
-    },
-    dateOfDead: {
-      type: String,
-      trim: true,
     },
     isMaried: {
       type: Boolean,

@@ -25,12 +25,11 @@ const userDirectRegistation = async (req, res, next) => {
       phone,
       dateOfBirth,
       image: imageBuffer,
-      // image: imageBufferString,
     };
     const isExists = await userSchemaModel.exists({ email });
 
     if (isExists) {
-      throw createHttpError(409, "User already exists");
+      throw createHttpError(409, "Email already exists");
     }
     const newUserData = await userSchemaModel.create(users);
     if (!newUserData) {
