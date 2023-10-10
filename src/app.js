@@ -12,6 +12,7 @@ const authRouter = require("./Router/AuthRoute/AuthRoute");
 const bodyParser = require("body-parser");
 const NewsRoute = require("./Router/NewsRoute/NewsRoute");
 
+//
 app.use(
   bodyParser.urlencoded({
     limit: "50mb",
