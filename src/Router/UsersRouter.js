@@ -32,8 +32,8 @@ userRouter.get("/", getUsersController);
 //Find Users by Searching => api/users/filter?search = subroto
 userRouter.get("/filters", isLogedIn, searchingUsers);
 
-//Find Users By Id => api/users/:id
-userRouter.get("/:id", getUserById);
+//Find Users By email => api/users/:id
+userRouter.get("/email", getUserById);
 
 //Update User Data
 userRouter.put("/update/:id", isLogedIn, upload.single("img"), updateUser);

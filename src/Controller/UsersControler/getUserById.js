@@ -5,10 +5,10 @@ const userSchemaModel = require("../../Modele/UsersModel/UsersModel");
 
 const getUserById = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const email = req.body;
 
     //Function  Call get Data By ID
-    const user = await FindById(userSchemaModel, id);
+    const user = await userSchemaModel.findOne({ email: email });
 
     return handleSuccess(res, {
       statusCode: 201,
