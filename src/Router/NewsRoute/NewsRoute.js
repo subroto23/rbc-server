@@ -5,7 +5,7 @@ const newsPostController = require("../../Controller/NewsController/NewsPostCont
 const newsGetController = require("../../Controller/NewsController/NewsGetController");
 const newsIdBasedController = require("../../Controller/NewsController/NewsIdSearched");
 
-NewsRoute.get("/", newsGetController);
+NewsRoute.get("/view", newsGetController);
 NewsRoute.post("/create", upload.single("image"), newsPostController);
 NewsRoute.get("/:id", newsIdBasedController);
 
