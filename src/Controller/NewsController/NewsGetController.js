@@ -3,10 +3,7 @@ const NewsModel = require("../../Modele/NewsModel/NewsModel");
 const { handleSuccess } = require("../../Services/SuccessError");
 const newsGetController = async (req, res, next) => {
   try {
-    const allNews = await NewsModel.find({}).populate(
-      "createdBy",
-      "-password -fathername -mothername -phone -isAdmin -isBanned -isMaried -isrbcMember -isVillagers -createdAt -updatedAt"
-    );
+    const allNews = await NewsModel.find({})
     if (!allNews) {
       throw createHttpError("এই মুহুর্তে ডাটাবেজে কোনো নিউজ নেই");
     }

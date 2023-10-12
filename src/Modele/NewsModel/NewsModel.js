@@ -4,6 +4,11 @@ const userSchemaModel = require("../UsersModel/UsersModel");
 
 const newsSchema = new Schema(
   {
+    createdBy: {
+      type: String,
+      trim: true,
+      required: true,
+    },
     title: {
       type: String,
       trim: true,
@@ -26,11 +31,6 @@ const newsSchema = new Schema(
     date: {
       type: Date,
       default: Date.now,
-    },
-    createdBy: {
-      type: mongoose.Types.ObjectId,
-      ref: "users",
-      required: true,
     },
   },
   { timestamps: true }
