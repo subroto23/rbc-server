@@ -5,16 +5,16 @@ const { handleSuccess } = require("../../Services/SuccessError");
 const eventsPostController = async (req, res, next) => {
   try {
     const { title, subtitle, about, date } = req.body;
-    let image = await req.file;
-    if (image) {
-      image = await image.buffer.toString("base64");
-    }
+    // let image = await req.file;
+    // if (image) {
+    //   image = await image.buffer.toString("base64");
+    // }
     const eventDataPass = {
       title,
       subtitle,
       about,
       date,
-      image,
+      // image,
     };
 
     const eventsSaveValue = await EventsModel.create(eventDataPass);

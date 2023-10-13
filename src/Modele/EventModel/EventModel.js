@@ -17,10 +17,10 @@ const Events = new Schema(
       trim: true,
       required: [true, "উৎসবের তারিখ অবশ্যই দিতে হবে"],
     },
-    image: {
-      type: Buffer,
-      contentType: String,
-    },
+    // image: {
+    //   type: Buffer,
+    //   contentType: String,
+    // },
   },
   { timestamps: true }
 );
