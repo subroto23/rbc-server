@@ -4,7 +4,7 @@ const { handleSuccess } = require("../../Services/SuccessError");
 
 const getEventController = async (req, res, next) => {
   try {
-    const event = await EventsModel.find();
+    const event = await EventsModel.find({});
     if (!event) {
       createHttpError("এই মুহুর্তে কোনো উৎসবের নাম খুজে পাওয়া যাচ্ছে না।");
     }
