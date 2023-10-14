@@ -13,6 +13,7 @@ const bodyParser = require("body-parser");
 const NewsRoute = require("./Router/NewsRoute/NewsRoute");
 const CadaRoute = require("./Router/CadaRoute/CadaCollectRoute");
 const TittleRoute = require("./Router/Title Route/TitleRoute");
+const DueRoute = require("./Router/DueRoute/DueRoutes");
 
 //
 app.use(
@@ -69,6 +70,9 @@ app.use("/api/news", NewsRoute);
 
 //Cada Routes
 app.use("/cada/details", CadaRoute);
+
+//Cada Routes
+app.use("/due/details", DueRoute);
 
 //Title Routes
 app.use("/title/heading", TittleRoute);
