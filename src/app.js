@@ -12,6 +12,7 @@ const authRouter = require("./Router/AuthRoute/AuthRoute");
 const bodyParser = require("body-parser");
 const NewsRoute = require("./Router/NewsRoute/NewsRoute");
 const CadaRoute = require("./Router/CadaRoute/CadaCollectRoute");
+const TittleRoute = require("./Router/Title Route/TitleRoute");
 
 //
 app.use(
@@ -68,6 +69,9 @@ app.use("/api/news", NewsRoute);
 
 //Cada Routes
 app.use("/cada/details", CadaRoute);
+
+//Title Routes
+app.use("/title/heading", TittleRoute);
 
 //clint side error
 app.use((req, res, next) => {
