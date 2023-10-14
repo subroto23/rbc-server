@@ -7,7 +7,7 @@ const CadaUpdateController = async (req, res, next) => {
     if (!id) {
       throw createHttpError("আইডি পাওয়া যায় নি");
     }
-    const filter = {new id:new Object_id(id)}
+    // const filter = {new id:new Object_id(id)}
     const updateValue = req.body;
     const options = { new: true };
     const update = await Cada.findByIdAndUpdate()
