@@ -8,6 +8,11 @@ const DueSchema = new Schema(
       required: [true, "অর্থ প্রদানকারীর নাম লিখুন"],
       unique: true,
     },
+    source: {
+      type: String,
+      trim: true,
+      required: [true, "অর্থ প্রদানকারীর নাম লিখুন"],
+    },
     fixedTk: {
       type: String,
       trim: true,

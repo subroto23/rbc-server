@@ -4,9 +4,10 @@ const DueModel = require("../../Modele/DueModel/DueModel");
 
 const DuePostController = async (req, res, next) => {
   try {
-    const { name, fixedTk, paidTk, due } = req.body;
+    const { name, source, fixedTk, paidTk, due } = req.body;
     const bodyDatas = {
       name,
+      source,
       fixedTk,
       paidTk,
       due,
