@@ -4,8 +4,8 @@ const FindById = async (model, id) => {
   try {
     const options = { password: 0 };
 
-    const datas = await model.findById(id, options);
-    
+    const datas = await model.findById({ _id: id }, options);
+
     if (!datas) {
       throw createHttpError(403, "Sorry!!  User Id not Mathched!!");
     }
