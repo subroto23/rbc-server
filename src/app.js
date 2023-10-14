@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./Router/AuthRoute/AuthRoute");
 const bodyParser = require("body-parser");
 const NewsRoute = require("./Router/NewsRoute/NewsRoute");
+const CadaRoute = require("./Router/CadaRoute/CadaCollectRoute");
 
 //
 app.use(
@@ -64,6 +65,9 @@ app.use("/events", eventRoute);
 
 //News Routes
 app.use("/api/news", NewsRoute);
+
+//Cada Routes
+app.use("/cada/details", CadaRoute);
 
 //clint side error
 app.use((req, res, next) => {
