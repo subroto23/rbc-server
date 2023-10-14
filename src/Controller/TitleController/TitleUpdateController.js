@@ -14,7 +14,7 @@ const titleUpdateController = async (req, res, next) => {
     const filter = isData;
     const update = { $set: { title } };
     const options = { new: true };
-    const Updated = await Cada.findByIdAndUpdate(filter, update, options);
+    const Updated = await titleModel.findByIdAndUpdate(filter, update, options);
     return handleSuccess(res, {
       statusCode: 201,
       message: "আপডেট করা হয়েছে",
