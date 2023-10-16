@@ -7,6 +7,7 @@ const DueUpdateController = async (req, res, next) => {
   try {
     const id = req.params.id;
     const { paidTk, due } = req.body;
+    console.log(paidTk, due, id);
     const isData = await FindById(DueModel, id);
     if (!isData) {
       throw createHttpError("আইডি পাওয়া যায় নি");
