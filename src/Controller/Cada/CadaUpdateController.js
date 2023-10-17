@@ -6,13 +6,13 @@ const { handleSuccess } = require("../../Services/SuccessError");
 const CadaUpdateController = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const { catagory, name, fixedTk, paidTk } = req.body;
+    const { name, fixedTk, paidTk } = req.body;
     const isData = await FindById(Cada, id);
     if (!isData) {
       throw createHttpError("আইডি পাওয়া যায় নি");
     }
     const filter = isData;
-    const update = { $set: { catagory, name, fixedTk, paidTk } };
+    const update = { $set: { name, fixedTk, paidTk } };
     const options = { new: true };
     const Updated = await Cada.findByIdAndUpdate(filter, update, options);
     return handleSuccess(res, {
