@@ -3,7 +3,7 @@ const NewsModel = require("../../Modele/NewsModel/NewsModel");
 const { handleSuccess } = require("../../Services/SuccessError");
 const newsGetController = async (req, res, next) => {
   try {
-    const page = Number(req.queary.page) || 1;
+    const page = Number(req.query.page) || 1;
     const limit = 3;
     const allNews = await NewsModel.find()
       .limit(limit)
