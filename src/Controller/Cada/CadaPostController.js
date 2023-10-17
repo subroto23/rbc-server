@@ -4,8 +4,9 @@ const { handleSuccess } = require("../../Services/SuccessError");
 
 const cadaPostController = async (req, res, next) => {
   try {
-    const { name, fixedTk, paidTk } = req.body;
+    const { catagory, name, fixedTk, paidTk } = req.body;
     const bodyDatas = {
+      catagory,
       name,
       fixedTk,
       paidTk,

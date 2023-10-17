@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const CadaSchema = new Schema(
   {
+    catagory: {
+      type: String,
+      trim: true,
+    },
     name: {
       type: String,
       trim: true,
