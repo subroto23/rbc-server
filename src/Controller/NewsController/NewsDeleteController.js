@@ -1,4 +1,5 @@
 const NewsModel = require("../../Modele/NewsModel/NewsModel");
+const { handleSuccess } = require("../../Services/SuccessError");
 
 const NewsDeleteController = async (req, res, next) => {
   try {

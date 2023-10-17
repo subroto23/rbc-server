@@ -1,4 +1,6 @@
 const NewsModel = require("../../Modele/NewsModel/NewsModel");
+const { handleSuccess } = require("../../Services/SuccessError");
+const FindById = require("../../helper/FindDataById");
 
 const newsUpdateController = async (req, res, next) => {
   try {
@@ -8,6 +10,7 @@ const newsUpdateController = async (req, res, next) => {
     if (!isData) {
       throw createHttpError("আইডি পাওয়া যায় নি");
     }
+    console.log(id, title, details, image);
     const filter = isData;
     const update = { $set: { title, details, image } };
     const options = { new: true };
