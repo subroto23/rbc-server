@@ -4,9 +4,9 @@ const { handleSuccess } = require("../../Services/SuccessError");
 const newsGetController = async (req, res, next) => {
   try {
     const page = Number(req.query.page) || 1;
-    console.log(page);
     const limit = 3;
     const allNews = await NewsModel.find()
+      .sort({ _id: -1 })
       .limit(limit)
       .skip((page - 1) * 3);
     if (!allNews) {
