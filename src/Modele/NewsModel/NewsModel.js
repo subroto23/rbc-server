@@ -24,8 +24,8 @@ const newsSchema = new Schema(
       required: [true, "বিস্তারিত অবশ্যই দিতে হবে"],
     },
     image: {
-      type: Buffer,
-      contentType: String,
+      type: String,
+      trim: true,
       required: [true, "খবরের ছবি থাকতেই হবে"],
     },
     date: {

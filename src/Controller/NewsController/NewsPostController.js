@@ -4,12 +4,12 @@ const { handleSuccess } = require("../../Services/SuccessError");
 
 const newsPostController = async (req, res, next) => {
   try {
-    const { title, details, createdBy } = req.body;
-    let image = await req.file;
-    //
-    if (image) {
-      image = await image.buffer.toString("base64");
-    }
+    const { title, details, createdBy, image } = req.body;
+    // let image = await req.file;
+    // //
+    // if (image) {
+    //   image = await image.buffer.toString("base64");
+    // }
     const bodyCreateValue = {
       title,
       details,
