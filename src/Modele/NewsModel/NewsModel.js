@@ -20,13 +20,10 @@ const newsSchema = new Schema(
     details: {
       type: String,
       trim: true,
-      unique: true,
-      required: [true, "বিস্তারিত অবশ্যই দিতে হবে"],
     },
     image: {
       type: String,
       trim: true,
-      required: [true, "খবরের ছবি থাকতেই হবে"],
     },
     date: {
       type: Date,
