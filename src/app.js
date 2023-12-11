@@ -48,11 +48,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//creating server
-app.get("/", (req, res) => {
-  res.status(200).send({ message: "welcome to the new server" });
-});
-
 //Users Routers Creating
 app.use("/api/users", userRouter);
 

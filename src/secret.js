@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const serverPort = process.env.SERVER_PORT_NUMBER || 3002;
+const serverPort = process.env.PORT || process.env.SERVER_PORT_NUMBER;
 
 const mongodbUrl =
   process.env.MONGODB_ATLAS_URL || "mongodb://localhost:27017/rbcDatabase";

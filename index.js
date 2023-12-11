@@ -2,9 +2,8 @@ const app = require("./src/app");
 const mongodbDatabaseConnection = require("./src/config/db");
 const { serverPort } = require("./src/secret");
 
-app.get("/", (req, res, next) => {
-  
-  res.send.json("Hellow Server Side");
+app.get("/", (req, res) => {
+  res.send("Welcome to RBC Server Side");
 });
 
 app.listen(serverPort, async () => {
