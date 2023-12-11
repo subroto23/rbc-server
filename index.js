@@ -3,6 +3,7 @@ const mongodbDatabaseConnection = require("./src/config/db");
 const { serverPort } = require("./src/secret");
 
 app.get("/", (req, res, next) => {
+  
   res.send.json("Hellow Server Side");
 });
 
